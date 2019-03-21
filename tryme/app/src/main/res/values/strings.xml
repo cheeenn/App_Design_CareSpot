@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">try me</string>
+    <string name="maybe">maybe</string>
+    <string name="level">What\'s the level of you about this?</string>
+    <string name="mom">Mom</string>
+    <string name="dad">Dad</string>
+    <string name="me">Me</string>
+    <string name="alert_dia">Alert Dialog</string>
+    <string name="alert_dialog_name">you want to exit?</string>
+    <string name="yes">YES</string>
+    <string name="cancel">Cancel</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Activity_l</string>
+    <string name="Show_next">Show next screen</string>
+    <string name="BackButton">Go Back</string>
+</resources>
