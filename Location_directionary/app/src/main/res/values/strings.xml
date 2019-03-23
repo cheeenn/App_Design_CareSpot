@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Location_directionary</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="search_title">Search Title</string>
+    <string name="search_text">New Search </string>
+    <string name="search_hint">E.g: Batman</string>
+    <string name="submit_text">Submit</string>
 </resources>

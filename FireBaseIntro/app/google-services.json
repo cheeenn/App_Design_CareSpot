@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "755514584425",
+    "firebase_url": "https://fairbase-intro.firebaseio.com",
+    "project_id": "fairbase-intro",
+    "storage_bucket": "fairbase-intro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755514584425:android:c9ebaecca50e4b49",
+        "android_client_info": {
+          "package_name": "com.example.meterstoinches.firebaseintro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755514584425-bjddm50rk6a8ug93i6c55u69jasantc0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meterstoinches.firebaseintro",
+            "certificate_hash": "75f349bd3c3c55a283a72c164174b78c61f1091a"
+          }
+        },
+        {
+          "client_id": "755514584425-6l40vh5lhn41n1gnmh00ouap5rt2ae34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDShs6oh4Tqn8etyrbNgL0O8TyAXykQ7PY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755514584425-6l40vh5lhn41n1gnmh00ouap5rt2ae34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

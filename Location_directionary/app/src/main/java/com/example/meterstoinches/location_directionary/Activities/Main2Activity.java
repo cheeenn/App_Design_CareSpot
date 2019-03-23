@@ -3,12 +3,17 @@ package com.example.meterstoinches.location_directionary.Activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,6 +39,10 @@ public class Main2Activity extends AppCompatActivity {
     private MovieRecyclerViewAdapter movieRecyclerViewAdapter;
     private List<Location> movieList;
     private RequestQueue queue;
+
+    private AlertDialog.Builder alertDialogBuilder;
+    private AlertDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,17 +54,24 @@ public class Main2Activity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                showInputDialog();
             }
         });
         recyclerView =(RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        movieList=new ArrayList<>();
-
         prefs preference = new prefs(Main2Activity.this);
         String search = preference.getSearch();
-        getMovies(search);
+        movieList=new ArrayList<>();
+        //getMovies(search);
+
+        //set the adapter
+        movieList =getMovies(search);
+        System.out.println("this movie list is" + movieList.size());
+        movieRecyclerViewAdapter = new MovieRecyclerViewAdapter(this,movieList);
+        recyclerView.setAdapter(movieRecyclerViewAdapter);
+        movieRecyclerViewAdapter.notifyDataSetChanged();
+
     }
 
     //GET movies
@@ -72,13 +88,15 @@ public class Main2Activity extends AppCompatActivity {
                         JSONObject movieObj = moviesArray.getJSONObject(i);
                         Location movie = new Location();
                         movie.setTitle(movieObj.getString("Title"));
-                        movie.setYear(movieObj.getString("Year"));
-                        movie.setMovieType(movieObj.getString("Type"));
+                        movie.setYear("Year Released: "+movieObj.getString("Year"));
+                        movie.setMovieType("Type: "+movieObj.getString("Type"));
                         movie.setPoster(movieObj.getString("Poster"));
                         movie.setImbdId(movieObj.getString("imdbID"));
                         movieList.add(movie);
-                        Log.d("movies", movie.getTitle());
+                        System.out.println("inside movie list len" + movieList.size());
+                        //Log.d("movies", movie.getTitle());
                     }
+                    movieRecyclerViewAdapter.notifyDataSetChanged();//very important
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -89,9 +107,49 @@ public class Main2Activity extends AppCompatActivity {
 
             }
         });
+
         // never forget to do the queue
         queue.add(jsonObjectRequest);
+        System.out.println("after process length " + movieList.size());
         return movieList;
     }
 
+@Override
+public boolean onCreateOptionsMenu(Menu menu){
+    getMenuInflater().inflate(R.menu.menu_main,menu);
+    return true;
+}
+@Override
+    public  boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id==R.id.new_search){
+            showInputDialog();
+            //return true;
+        }
+        return super.onOptionsItemSelected(item);
+}
+    public  void showInputDialog(){
+        alertDialogBuilder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_view,null);
+        final EditText newSearchEdt = (EditText) view.findViewById(R.id.searchEdt);
+        Button submitButton = (Button) view.findViewById(R.id.submitButton);
+        alertDialogBuilder.setView(view);
+        dialog = alertDialogBuilder.create();
+        dialog.show();
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prefs prefence = new prefs(Main2Activity.this);
+                if(!newSearchEdt.getText().toString().isEmpty()){
+                    String search = newSearchEdt.getText().toString();
+                    prefence.setSearch((search));
+                    movieList.clear();
+                    getMovies(search);
+                    //movieRecyclerViewAdapter.notifyDataSetChanged();//very important
+                }
+                dialog.dismiss();
+                //recreate();
+            }
+        });
+    }
 }

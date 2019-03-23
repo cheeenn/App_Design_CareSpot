@@ -1,6 +1,7 @@
 package com.example.meterstoinches.location_directionary.Data;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Movie;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.meterstoinches.location_directionary.Activities.MovieDetailActivity;
 import com.example.meterstoinches.location_directionary.Model.Location;
 import com.example.meterstoinches.location_directionary.R;
 import com.squareup.picasso.Picasso;
@@ -58,7 +60,7 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
         ImageView poster;
         TextView year;
         TextView type;
-        public ViewHolder(@NonNull View itemView,Context ctx) {
+        public ViewHolder(@NonNull View itemView, final Context ctx) {
             super(itemView);
             context = ctx;
             title = (TextView) itemView.findViewById(R.id.movieTitleID);
@@ -68,7 +70,11 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context,"Row Trapped!", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context,"Row Trapped!", Toast.LENGTH_LONG).show();
+                    Location movie = movieList.get(getAdapterPosition());
+                    Intent intent = new Intent(context,MovieDetailActivity.class);
+                    intent.putExtra("movie",movie);
+                    ctx.startActivity(intent);
                 }
             });
 
