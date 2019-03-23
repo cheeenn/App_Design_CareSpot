@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Care Support</string>
     <string name="title_activity_maps">Map</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Register">Register</string>
+    <string name="Signin">Sign In</string>
+    <string name="Logo">Logo</string>
 </resources>
