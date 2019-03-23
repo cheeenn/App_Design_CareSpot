@@ -1,5 +1,6 @@
 package com.example.meterstoinches.caresupport;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -21,13 +22,24 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    
+
+    // mainly use log
+    private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setUI();
+        database=FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Myupdate");
+        //databaseReference.setValue("enter");
+        mAuth=FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
+            }
+        };
     }
 
     private void setUI() {
