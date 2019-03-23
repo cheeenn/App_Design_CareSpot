@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "783614679814",
+    "firebase_url": "https://carespot-64c72.firebaseio.com",
+    "project_id": "carespot-64c72",
+    "storage_bucket": "carespot-64c72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783614679814:android:d0d7e17d7c17ef6a",
+        "android_client_info": {
+          "package_name": "com.example.meterstoinches.caresupport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783614679814-rutm62i8r4fq8udtkd2edm1vfolshn3u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meterstoinches.caresupport",
+            "certificate_hash": "75f349bd3c3c55a283a72c164174b78c61f1091a"
+          }
+        },
+        {
+          "client_id": "783614679814-5sa7f33tm64uuebdo4e7h0htiq6ikasd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUdIDeXBjlHnaacmxZjSSM_xd07AhLAag"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783614679814-5sa7f33tm64uuebdo4e7h0htiq6ikasd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
