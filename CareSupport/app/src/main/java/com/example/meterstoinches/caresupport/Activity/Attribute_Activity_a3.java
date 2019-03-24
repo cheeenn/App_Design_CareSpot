@@ -52,8 +52,8 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
                 showInputDialog();
             }
         });
@@ -72,6 +72,7 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
         recyclerView.setAdapter(locationRecyclerViewAdapter);
         locationRecyclerViewAdapter.notifyDataSetChanged();
     }
+
     //GET movies
     public List<Location> getMovies(String searchTerm){
         movieList.clear();
@@ -105,12 +106,12 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
 
             }
         });
-
         // never forget to do the queue
         queue.add(jsonObjectRequest);
         System.out.println("after process length " + movieList.size());
         return movieList;
     }
+
     public  void showInputDialog(){
         alertDialogBuilder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.dialog_row,null);
@@ -135,4 +136,5 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
             }
         });
     }
+
 }
