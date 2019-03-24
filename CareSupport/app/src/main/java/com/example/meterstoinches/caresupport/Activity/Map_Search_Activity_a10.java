@@ -130,7 +130,7 @@ public class Map_Search_Activity_a10 extends AppCompatActivity {
                     prefence.setSearch((search));
                     movieList.clear();
                     getMovies(search);
-                    //locationRecyclerViewAdapter.notifyDataSetChanged();//very important
+                    locationRecyclerViewAdapter.notifyDataSetChanged();//very important
                 }
                 dialog.dismiss();
                 //recreate();

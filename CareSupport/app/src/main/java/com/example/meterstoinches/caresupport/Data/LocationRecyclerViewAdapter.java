@@ -29,7 +29,7 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
     @NonNull
     @Override
     public LocationRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.location_detail,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.location_detail_a10,viewGroup,false);
         return new ViewHolder(view,context);
     }
 
