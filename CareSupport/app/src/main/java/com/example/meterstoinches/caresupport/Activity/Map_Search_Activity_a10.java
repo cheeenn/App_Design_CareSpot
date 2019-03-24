@@ -1,14 +1,14 @@
 package com.example.meterstoinches.caresupport.Activity;
 
 import android.os.Bundle;
-import android.provider.SyncStateContract;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +33,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Attribute_Activity_a3 extends AppCompatActivity {
+public class Map_Search_Activity_a10 extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LocationRecyclerViewAdapter locationRecyclerViewAdapter;
     private List<Location> movieList;
@@ -44,7 +44,7 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attribute__a3);
+        setContentView(R.layout.map_search_a10);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         queue = Volley.newRequestQueue(this);
@@ -60,7 +60,7 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
         recyclerView =(RecyclerView) findViewById(R.id.recycleView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Prefs preference = new Prefs(Attribute_Activity_a3.this);
+        Prefs preference = new Prefs(Map_Search_Activity_a10.this);
         String search = preference.getSearch();
         movieList=new ArrayList<>();
         //getMovies(search);
@@ -76,7 +76,8 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
     //GET movies
     public List<Location> getMovies(String searchTerm){
         movieList.clear();
-        //String url = "http://www.omdbapi.com/?apikey=55d0265f&s=%22Batman%22&page=2";
+        //String url = Contants.URL_LEFT + searchTerm + Contants.URL_RIGHT;
+        
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
                 Contants.URL_LEFT + searchTerm + Contants.URL_RIGHT, new Response.Listener<JSONObject>() {
             @Override
@@ -123,7 +124,7 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Prefs prefence = new Prefs(Attribute_Activity_a3.this);
+                Prefs prefence = new Prefs(Map_Search_Activity_a10.this);
                 if(!newSearchEdt.getText().toString().isEmpty()){
                     String search = newSearchEdt.getText().toString();
                     prefence.setSearch((search));
@@ -136,5 +137,18 @@ public class Attribute_Activity_a3 extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_m,menu);
+        return true;
+    }
+    @Override
+    public  boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id==R.id.new_search){
+            showInputDialog();
+            //return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

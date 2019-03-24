@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity_a2 extends FragmentActivity implements OnMapReadyCallback {
     private Button attribute;
     private Button map;
     private Button chat;
@@ -34,14 +34,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         attribute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( MapsActivity.this,Attribute_Activity_a3.class);
-                startActivity(intent);
+
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent( MapsActivity_a2.this,Map_Search_Activity_a10.class);
+                startActivity(intent);
             }
         });
         chat.setOnClickListener(new View.OnClickListener() {

@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                                         //now can write things
                                         User customer = new User("Chen","Mao",emails,99);
                                         databaseReference.setValue(customer);
-                                        Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+                                        Intent intent = new Intent(MainActivity.this,MapsActivity_a2.class);
                                         startActivity(intent);
                                     }
                                 }

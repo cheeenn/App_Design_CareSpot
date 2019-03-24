@@ -7,7 +7,8 @@
     <string name="Signin">Sign In</string>
     <string name="Logo">Logo</string>
     <string name="title_activity_attribute__a3">Attribute_Activity_a3</string>
-    <string name="search_text">search_text</string>
-    <string name="search_hint">search_hint</string>
-    <string name="submit_text">submit_class</string>
+    <string name="search_text">Search</string>
+    <string name="search_hint">hint</string>
+    <string name="submit_text">Submit</string>
+    <string name="search_title">Search Title</string>
 </resources>

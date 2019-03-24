@@ -37,13 +37,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Activity.MapsActivity"
+            android:name=".Activity.MapsActivity_a2"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".Activity.Attribute_Activity_a3"
+            android:name=".Activity.Map_Search_Activity_a10"
             android:label="@string/title_activity_attribute__a3"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.Location_Detail_activity_a8"></activity>
+        <activity android:name=".Activity.Location_Detail_Activity_a3"></activity>
     </application>
 
 </manifest>

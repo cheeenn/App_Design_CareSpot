@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Location_Detail_activity_a8 extends AppCompatActivity {
+public class Location_Detail_Activity_a3 extends AppCompatActivity {
     private Location movie;
     private TextView movieTitle;
     private ImageView movieImage;
@@ -41,7 +41,7 @@ public class Location_Detail_activity_a8 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_location__detail_a8);
+        setContentView(R.layout.activity_location__detail_a3);
         queue = Volley.newRequestQueue(this);
         movie = (Location) getIntent().getSerializableExtra("movie");
         movieId = movie.getImbdId();

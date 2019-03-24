@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.meterstoinches.caresupport.Activity.Location_Detail_activity_a8;
+import com.example.meterstoinches.caresupport.Activity.Location_Detail_Activity_a3;
 import com.example.meterstoinches.caresupport.Model.Location;
 import com.example.meterstoinches.caresupport.R;
 import com.squareup.picasso.Picasso;
@@ -70,7 +70,7 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
                 public void onClick(View v) {
                     //Toast.makeText(context,"Row Trapped!", Toast.LENGTH_LONG).show();
                     Location movie = movieList.get(getAdapterPosition());
-                    Intent intent = new Intent(context, Location_Detail_activity_a8.class);
+                    Intent intent = new Intent(context, Location_Detail_Activity_a3.class);
                     intent.putExtra("movie", movie);
                     ctx.startActivity(intent);
                 }
