@@ -74,12 +74,43 @@ public class MapsActivity_a2 extends FragmentActivity implements OnMapReadyCallb
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Sydney / Nursing Room 1"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
-        LatLng a = new LatLng(-34, 130);
+        LatLng n2 = new LatLng(38.6530169,-91.3835);
+        mMap.addMarker(new MarkerOptions().position(n2).title("Nursing Room 1"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(n2));
+        LatLng n3 = new LatLng(39.6530169,-90.3835);
+        mMap.addMarker(new MarkerOptions().position(n3).title(" Nursing Room 2"));
+
+        LatLng n4 = new LatLng(38.6530169,-93.3835);
+        mMap.addMarker(new MarkerOptions().position(n4).title("Nursing Room 3"));
+
+        LatLng n5 = new LatLng(39.6530169,-90.3635);
+        mMap.addMarker(new MarkerOptions().position(n5).title("Nursing Room 4"));
+
+        LatLng n6 = new LatLng(32.6530169,-91.3835);
+        mMap.addMarker(new MarkerOptions().position(n6).title("Nursing Room 5"));
+
+        LatLng n7 = new LatLng(33.6530169,-93.3835);
+        mMap.addMarker(new MarkerOptions().position(n7).title("Nursing Room 7"));
+
+        LatLng n8 = new LatLng(39.6530169,-93.3635);
+        mMap.addMarker(new MarkerOptions().position(n8).title("Nursing Room 8"));
+
+        LatLng n9 = new LatLng(33.6530169,-92.3835);
+        mMap.addMarker(new MarkerOptions().position(n9).title("Nursing Room 9"));
+
+        LatLng a = new LatLng(33.6530169,-91.3835);
+        LatLng a2 = new LatLng(34.6530169,-91.3835);
+        LatLng a3 = new LatLng(35.6530169,-88.3835);
+        LatLng a4 = new LatLng(33.6530169,-93.3835);
+
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-        mMap.addMarker(markerOptions.position(a).title("Marker in chen"));
+        mMap.addMarker(markerOptions.position(a).title("parking lot1"));
+        mMap.addMarker(markerOptions.position(a2).title("parking lot2"));
+        mMap.addMarker(markerOptions.position(a3).title("parking lot3"));
+        mMap.addMarker(markerOptions.position(a4).title("parking lot4"));
     }
 }
