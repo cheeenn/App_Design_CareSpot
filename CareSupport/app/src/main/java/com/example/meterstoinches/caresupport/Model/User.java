@@ -1,4 +1,4 @@
-package com.example.meterstoinches.caresupport;
+package com.example.meterstoinches.caresupport.Model;
 
 public class User {
     private  String firstname;
