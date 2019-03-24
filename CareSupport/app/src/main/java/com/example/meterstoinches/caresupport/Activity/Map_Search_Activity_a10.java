@@ -115,7 +115,7 @@ public class Map_Search_Activity_a10 extends AppCompatActivity {
 
     public  void showInputDialog(){
         alertDialogBuilder = new AlertDialog.Builder(this);
-        View view = getLayoutInflater().inflate(R.layout.dialog_row,null);
+        View view = getLayoutInflater().inflate(R.layout.dialog_popup,null);
         final EditText newSearchEdt = (EditText) view.findViewById(R.id.searchEdt_a3);
         Button submitButton = (Button) view.findViewById(R.id.submitButton_a3);
         alertDialogBuilder.setView(view);
