@@ -42,7 +42,8 @@
         <activity
             android:name=".Activity.Attribute_Activity_a3"
             android:label="@string/title_activity_attribute__a3"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.Location_Detail_activity_a8"></activity>
     </application>
 
 </manifest>
